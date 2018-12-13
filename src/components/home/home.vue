@@ -14,7 +14,7 @@
       <!-- assessment -->
       <div class="assessment">
         <div class="logo">
-          <img src="../assets/images/dlogo.png"><span>医院整体评价</span>
+          <img src="../../assets/images/dlogo.png"><span>医院整体评价</span>
         </div>
         <div class="stars">
           <div class="star-wrapper">
@@ -53,12 +53,23 @@
       <!-- Consulting Services -->
       <Title title="服务咨询"></Title>
       <div class="list">
-        <Card class="list-item" v-for="(item, index) in consultingServices" :key="index" :data="item"></Card>
+        <Card
+          class="list-item"
+          v-for="(item, index) in consultingServices"
+          :key="index"
+          :data="item"
+        ></Card>
       </div>
       <!-- Health Services -->
       <Title title="卫生服务"></Title>
       <div class="list">
-        <Card class="list-item" :class="[index < healthServices.length - 2 ? 'border-bottom-1px' : '']" v-for="(item, index) in healthServices" :key="index" :data="item"></Card>
+        <Card
+          class="list-item"
+          :class="[index < healthServices.length - 2 ? 'border-bottom-1px' : '']"
+          v-for="(item, index) in healthServices"
+          :key="index"
+          :data="item"
+        ></Card>
       </div>
     </div>
 </template>
@@ -91,16 +102,16 @@ export default {
       comment: '',
       anonymous: false,
       consultingServices: [
-        { name: '前台接待', link: 'https://www.baidu.com', pic: qt, color: '#f39542', width: '84%' },
-        { name: '客服部', link: '', pic: kf, color: '#f7bd40', width: '60%' }
+        { name: '前台接待', link: '/members', pic: qt, color: '#f39542', width: '84%' },
+        { name: '客服部', link: '/members', pic: kf, color: '#f7bd40', width: '60%' }
       ],
       healthServices: [
-        { name: '美容外科', link: '', pic: wk, color: '#55c27e', width: '50%' },
-        { name: '微整科', link: '', pic: zs, color: '#44b790', width: '50%' },
-        { name: '美容皮肤科', link: '', pic: pfk, color: '#12b5c4', width: '50%' },
-        { name: '维颜会', link: '', pic: wyh, color: '#5892bf', width: '50%' },
-        { name: '美容牙科', link: '', pic: yk, color: '#c768d5', width: '50%' },
-        { name: '病房护理', link: '', pic: hl, color: '#bf589c', width: '50%' }
+        { name: '美容外科', link: '/members', pic: wk, color: '#55c27e', width: '50%' },
+        { name: '微整科', link: '/members', pic: zs, color: '#44b790', width: '50%' },
+        { name: '美容皮肤科', link: '/members', pic: pfk, color: '#12b5c4', width: '50%' },
+        { name: '维颜会', link: '/members', pic: wyh, color: '#5892bf', width: '50%' },
+        { name: '美容牙科', link: '/members', pic: yk, color: '#c768d5', width: '50%' },
+        { name: '病房护理', link: '/members', pic: hl, color: '#bf589c', width: '50%' }
       ]
     }
   },
@@ -196,7 +207,7 @@ export default {
           height 60px
           border-radius 8px
           border 1px solid #ddd
-          background-image url('../assets/images/dtp.png')
+          background-image url('../../assets/images/dtp.png')
           background-repeat no-repeat
           background-size cover
           background-position center
