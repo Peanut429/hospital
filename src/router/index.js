@@ -9,16 +9,26 @@ export default new Router({
     {
       path: '/',
       name: 'home',
+      meta: {
+        title: '医院'
+      },
       component: (resolve) => require(['../components/home/home.vue'], resolve)
     },
     {
       path: '/members',
       name: 'members',
+      meta: {
+        title: '全部人员'
+      },
       component: (resolve) => require(['../components/members/members.vue'], resolve)
     },
     {
-      path: '/assessment',
-      name: 'assessment'
+      path: '/assessment/:id',
+      name: 'assessment',
+      meta: {
+        title: '医院'
+      },
+      component: (resolve) => require(['../components/assessment/assessment.vue'], resolve)
     }
   ]
 })
