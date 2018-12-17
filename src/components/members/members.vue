@@ -34,7 +34,7 @@ export default {
         { id: '7', avatar: 'http://www.jyxinye.com/attachment/images/155/2018/10/ouU5SzKL4L6666F764z3ST44fFLs4u.jpeg', name: '李四', pingyin: 'erty', job: '前台接待-一楼前台', rate: 3 },
         { id: '8', avatar: 'http://www.jyxinye.com/attachment/images/155/2018/10/ouU5SzKL4L6666F764z3ST44fFLs4u.jpeg', name: '王五', pingyin: 'ghnm', job: '前台接待-一楼前台', rate: 3 },
         { id: '9', avatar: 'http://www.jyxinye.com/attachment/images/155/2018/10/ouU5SzKL4L6666F764z3ST44fFLs4u.jpeg', name: '猪', pingyin: 'iol', job: '前台接待-一楼前台', rate: 3 }
-      ], 
+      ]
     }
   },
   components: {
