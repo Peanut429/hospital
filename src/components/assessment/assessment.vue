@@ -25,14 +25,35 @@
       </div>
       <div class="number">4次评分</div>
     </div>
-    <div class="select"></div>
+    <form >
+      <div class="member">
+        <span>评分 - 黄静</span>
+      </div>
+      <div class="member-star">
+        <cube-rate class="rate" v-model="value" :max="5" ></cube-rate>
+        <div class="tip" v-show="value<=3">我要投诉</div>
+      </div>
+      <div class="checkbox-wrapper"></div>
+      <div class="radio-wapper"></div>
+      <div class="advise"></div>
+      <div class="add-pic"></div>
+      <div><button></button></div>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
+
   data () {
-    return {}
+    return {
+      value: 2
+    }
+  },
+  watch: {
+    value (n, o) {
+      console.log(n, o)
+    }
   },
   mounted () {
     console.log(this.$route.params.id)
@@ -121,4 +142,56 @@ export default {
             font-size 0.12em
       .number
         font-size 0.12em
+        color rgb(102,102,102)
+    .member
+      position relative
+      text-align center
+      height 1.4em
+      line-height 1.4em
+      font-size 0.14em
+      &:before
+        position absolute
+        right 3%
+        top 50%
+        display block
+        font-size 0
+        content " "
+        clear both
+        height 1px
+        width 32%
+        background-color #dbd9d9
+      &:after
+        position absolute
+        top 50%
+        left 3%
+        display block
+        font-size 0
+        content " "
+        clear both
+        height 1px
+        width 32%
+        background-color #dbd9d9
+      span
+        width 30%
+        font-size 1em
+        color rgb(153,153,153)
+    .member-star
+      padding-top 0.1em
+      display flex
+      flex-direction column
+      align-items center
+      .rate
+        >>>.cube-rate-item
+          width 47px
+          height 47px
+          margin 0
+          .cube-rate-item-def
+            background-size 70%
+      .tip
+        text-align center
+        font-size: 0.14em
+        color rgb(252,173,63)
+        margin-top 2px
+        height 1.6em
+        line-height 1.6em
 </style>
