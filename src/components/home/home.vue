@@ -41,7 +41,8 @@
         <div class="submit">
           <div class="left">
             <label class="choose_pic">
-              <input type="file" style="display: none">
+              <input type="file" style="display: none" @change="choosePic" ref="file" accept="image/png, image/jpeg"/>
+              <img v-if="img" :src="img" alt="">
             </label>
             <cube-checkbox v-model="anonymous">匿名</cube-checkbox>
           </div>
@@ -92,6 +93,7 @@ export default {
   components: { Title, Card },
   data () {
     return {
+      img: '',
       banner: [
         { image: banner1 },
         { image: banner2 },
@@ -123,6 +125,16 @@ export default {
   methods: {
     rate (index) {
       this.starNumber = index + 1
+    },
+    choosePic () {
+      let file = this.$refs.file.files[0]
+      if (file) {
+        let reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onload = (res) => {
+          this.img = res.target.result
+        }
+      }
     }
   }
 }
@@ -211,6 +223,9 @@ export default {
           background-repeat no-repeat
           background-size cover
           background-position center
+          img
+            width 100%
+            height 100%
       .right
         .cube-btn-primary
           height 44px

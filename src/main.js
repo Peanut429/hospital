@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import router from './router'
 import fastClick from 'fastclick'
+import instance from './assets/js/request'
 import './cube-ui'
 import App from './App.vue'
 import 'fonts/iconfont.css'
@@ -18,6 +19,9 @@ router.afterEach((to, from) => {
   window.scrollTo(0, 0)
 })
 
+Vue.prototype.$axios = instance
+
+console.log(process.env)
 new Vue({
   router,
   render: h => h(App)
